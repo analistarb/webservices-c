@@ -1,0 +1,8 @@
+C:\Users\Workstation\Desktop\08) Seleção\01) DotNet\07) WebService\webservices-c\Servidor\3 - DAL\bin\Debug\DAL.dll.config
+C:\Users\Workstation\Desktop\08) Seleção\01) DotNet\07) WebService\webservices-c\Servidor\3 - DAL\bin\Debug\DAL.dll
+C:\Users\Workstation\Desktop\08) Seleção\01) DotNet\07) WebService\webservices-c\Servidor\3 - DAL\bin\Debug\DAL.pdb
+C:\Users\Workstation\Desktop\08) Seleção\01) DotNet\07) WebService\webservices-c\Servidor\3 - DAL\bin\Debug\EntityFramework.dll
+C:\Users\Workstation\Desktop\08) Seleção\01) DotNet\07) WebService\webservices-c\Servidor\3 - DAL\bin\Debug\EntityFramework.xml
+C:\Users\Workstation\Desktop\08) Seleção\01) DotNet\07) WebService\webservices-c\Servidor\3 - DAL\obj\Debug\3 - DAL.csprojResolveAssemblyReference.cache
+C:\Users\Workstation\Desktop\08) Seleção\01) DotNet\07) WebService\webservices-c\Servidor\3 - DAL\obj\Debug\DAL.dll
+C:\Users\Workstation\Desktop\08) Seleção\01) DotNet\07) WebService\webservices-c\Servidor\3 - DAL\obj\Debug\DAL.pdb

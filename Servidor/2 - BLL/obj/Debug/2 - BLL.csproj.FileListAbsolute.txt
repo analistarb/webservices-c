@@ -1,0 +1,9 @@
+C:\Users\Workstation\Desktop\08) Seleção\01) DotNet\07) WebService\webservices-c\Servidor\2 - BLL\bin\Debug\BLL.dll
+C:\Users\Workstation\Desktop\08) Seleção\01) DotNet\07) WebService\webservices-c\Servidor\2 - BLL\bin\Debug\BLL.pdb
+C:\Users\Workstation\Desktop\08) Seleção\01) DotNet\07) WebService\webservices-c\Servidor\2 - BLL\bin\Debug\DAL.dll
+C:\Users\Workstation\Desktop\08) Seleção\01) DotNet\07) WebService\webservices-c\Servidor\2 - BLL\bin\Debug\EntityFramework.dll
+C:\Users\Workstation\Desktop\08) Seleção\01) DotNet\07) WebService\webservices-c\Servidor\2 - BLL\bin\Debug\DAL.pdb
+C:\Users\Workstation\Desktop\08) Seleção\01) DotNet\07) WebService\webservices-c\Servidor\2 - BLL\bin\Debug\EntityFramework.xml
+C:\Users\Workstation\Desktop\08) Seleção\01) DotNet\07) WebService\webservices-c\Servidor\2 - BLL\obj\Debug\2 - BLL.csprojResolveAssemblyReference.cache
+C:\Users\Workstation\Desktop\08) Seleção\01) DotNet\07) WebService\webservices-c\Servidor\2 - BLL\obj\Debug\BLL.dll
+C:\Users\Workstation\Desktop\08) Seleção\01) DotNet\07) WebService\webservices-c\Servidor\2 - BLL\obj\Debug\BLL.pdb

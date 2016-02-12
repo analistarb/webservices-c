@@ -16,3 +16,6 @@ C:\Users\Workstation\Desktop\JSON Cliente Final\webServiceCliente\webServiceClie
 C:\Users\Workstation\Desktop\JSON Cliente Final\webServiceCliente\webServiceCliente\webServiceCliente\obj\Debug\webServiceCliente.csproj.GenerateResource.Cache
 C:\Users\Workstation\Desktop\JSON Cliente Final\webServiceCliente\webServiceCliente\webServiceCliente\obj\Debug\webServiceCliente.exe
 C:\Users\Workstation\Desktop\JSON Cliente Final\webServiceCliente\webServiceCliente\webServiceCliente\obj\Debug\webServiceCliente.pdb
+C:\Users\Workstation\Desktop\07) Seleção\01) DotNet\07) WebService\webservices-c\Cliente\webServiceCliente\bin\Debug\webServiceCliente.exe.config
+C:\Users\Workstation\Desktop\07) Seleção\01) DotNet\07) WebService\webservices-c\Cliente\webServiceCliente\obj\Debug\webServiceCliente.exe
+C:\Users\Workstation\Desktop\07) Seleção\01) DotNet\07) WebService\webservices-c\Cliente\webServiceCliente\obj\Debug\webServiceCliente.pdb

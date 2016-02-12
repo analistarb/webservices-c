@@ -6,15 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-//Para poder usar o JavaScriptSerializer (JSON)
 using System.Web.Script.Serialization;
-
 using System.Windows.Forms;
-
-
-
-//Adicionar Referencias = System.Web.Extensions
 
 
 namespace webServiceCliente
