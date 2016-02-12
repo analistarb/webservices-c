@@ -1,0 +1,9 @@
+C:\Users\Workstation\Desktop\C#\Application\BLL\bin\Release\BLL.dll
+C:\Users\Workstation\Desktop\C#\Application\BLL\bin\Release\BLL.pdb
+C:\Users\Workstation\Desktop\C#\Application\BLL\bin\Release\DAL.dll
+C:\Users\Workstation\Desktop\C#\Application\BLL\bin\Release\EntityFramework.dll
+C:\Users\Workstation\Desktop\C#\Application\BLL\bin\Release\DAL.pdb
+C:\Users\Workstation\Desktop\C#\Application\BLL\bin\Release\EntityFramework.xml
+C:\Users\Workstation\Desktop\C#\Application\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Workstation\Desktop\C#\Application\BLL\obj\Release\BLL.dll
+C:\Users\Workstation\Desktop\C#\Application\BLL\obj\Release\BLL.pdb

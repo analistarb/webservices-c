@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="webserviceModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="webserviceModelStoreContainer">
+          <EntitySet Name="Produto" EntityType="webserviceModel.Store.Produto" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProdutoCategoria" EntityType="webserviceModel.Store.ProdutoCategoria" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Produto_ProdutoCategoria" Association="webserviceModel.Store.FK_Produto_ProdutoCategoria">
+            <End Role="ProdutoCategoria" EntitySet="ProdutoCategoria" />
+            <End Role="Produto" EntitySet="Produto" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Produto">
+          <Key>
+            <PropertyRef Name="ProdutoId" />
+          </Key>
+          <Property Name="ProdutoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="varchar" MaxLength="50" />
+          <Property Name="ProdutoCategoriaId" Type="int" />
+          <Property Name="DataCadastro" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ProdutoCategoria">
+          <Key>
+            <PropertyRef Name="ProdutoCategoriaId" />
+          </Key>
+          <Property Name="ProdutoCategoriaId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Produto_ProdutoCategoria">
+          <End Role="ProdutoCategoria" Type="webserviceModel.Store.ProdutoCategoria" Multiplicity="0..1" />
+          <End Role="Produto" Type="webserviceModel.Store.Produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProdutoCategoria">
+              <PropertyRef Name="ProdutoCategoriaId" />
+            </Principal>
+            <Dependent Role="Produto">
+              <PropertyRef Name="ProdutoCategoriaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="uspConsultarProduto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="INintProdutoID" Type="int" Mode="In" />
+          <Parameter Name="INvchDescricao" Type="varchar" Mode="In" />
+          <Parameter Name="INintProdutoCategoriaID" Type="int" Mode="In" />
+        </Function>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="webserviceModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="webserviceEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Produto" EntityType="webserviceModel.Produto" />
+          <EntitySet Name="ProdutoCategoria" EntityType="webserviceModel.ProdutoCategoria" />
+          <AssociationSet Name="FK_Produto_ProdutoCategoria" Association="webserviceModel.FK_Produto_ProdutoCategoria">
+            <End Role="ProdutoCategoria" EntitySet="ProdutoCategoria" />
+            <End Role="Produto" EntitySet="Produto" />
+          </AssociationSet>
+          <FunctionImport Name="uspConsultarProduto" ReturnType="Collection(webserviceModel.uspConsultarProduto_Result)">
+            <Parameter Name="INintProdutoID" Mode="In" Type="Int32" />
+            <Parameter Name="INvchDescricao" Mode="In" Type="String" />
+            <Parameter Name="INintProdutoCategoriaID" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="Produto">
+          <Key>
+            <PropertyRef Name="ProdutoId" />
+          </Key>
+          <Property Name="ProdutoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ProdutoCategoriaId" Type="Int32" />
+          <Property Name="DataCadastro" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ProdutoCategoria" Relationship="webserviceModel.FK_Produto_ProdutoCategoria" FromRole="Produto" ToRole="ProdutoCategoria" />
+        </EntityType>
+        <EntityType Name="ProdutoCategoria">
+          <Key>
+            <PropertyRef Name="ProdutoCategoriaId" />
+          </Key>
+          <Property Name="ProdutoCategoriaId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Produto" Relationship="webserviceModel.FK_Produto_ProdutoCategoria" FromRole="ProdutoCategoria" ToRole="Produto" />
+        </EntityType>
+        <Association Name="FK_Produto_ProdutoCategoria">
+          <End Role="ProdutoCategoria" Type="webserviceModel.ProdutoCategoria" Multiplicity="0..1" />
+          <End Role="Produto" Type="webserviceModel.Produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProdutoCategoria">
+              <PropertyRef Name="ProdutoCategoriaId" />
+            </Principal>
+            <Dependent Role="Produto">
+              <PropertyRef Name="ProdutoCategoriaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="uspConsultarProduto_Result">
+          <Property Type="Int32" Name="ProdutoId" Nullable="false" />
+          <Property Type="String" Name="DescProduto" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="DataCadastro" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="ProdutoCategoriaId" Nullable="true" />
+          <Property Type="String" Name="DescProdutoCategoria" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="webserviceModelStoreContainer" CdmEntityContainer="webserviceEntities">
+          <EntitySetMapping Name="Produto">
+            <EntityTypeMapping TypeName="webserviceModel.Produto">
+              <MappingFragment StoreEntitySet="Produto">
+                <ScalarProperty Name="ProdutoId" ColumnName="ProdutoId" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="ProdutoCategoriaId" ColumnName="ProdutoCategoriaId" />
+                <ScalarProperty Name="DataCadastro" ColumnName="DataCadastro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProdutoCategoria">
+            <EntityTypeMapping TypeName="webserviceModel.ProdutoCategoria">
+              <MappingFragment StoreEntitySet="ProdutoCategoria">
+                <ScalarProperty Name="ProdutoCategoriaId" ColumnName="ProdutoCategoriaId" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="uspConsultarProduto" FunctionName="webserviceModel.Store.uspConsultarProduto">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="webserviceModel.uspConsultarProduto_Result">
+                <ScalarProperty Name="ProdutoId" ColumnName="ProdutoId" />
+                <ScalarProperty Name="DescProduto" ColumnName="DescProduto" />
+                <ScalarProperty Name="DataCadastro" ColumnName="DataCadastro" />
+                <ScalarProperty Name="ProdutoCategoriaId" ColumnName="ProdutoCategoriaId" />
+                <ScalarProperty Name="DescProdutoCategoria" ColumnName="DescProdutoCategoria" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="webserviceModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="webserviceEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Produto" EntityType="webserviceModel.Produto" />
+    <EntitySet Name="ProdutoCategoria" EntityType="webserviceModel.ProdutoCategoria" />
+    <AssociationSet Name="FK_Produto_ProdutoCategoria" Association="webserviceModel.FK_Produto_ProdutoCategoria">
+      <End Role="ProdutoCategoria" EntitySet="ProdutoCategoria" />
+      <End Role="Produto" EntitySet="Produto" />
+    </AssociationSet>
+    <FunctionImport Name="uspConsultarProduto" ReturnType="Collection(webserviceModel.uspConsultarProduto_Result)">
+      <Parameter Name="INintProdutoID" Mode="In" Type="Int32" />
+      <Parameter Name="INvchDescricao" Mode="In" Type="String" />
+      <Parameter Name="INintProdutoCategoriaID" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Produto">
+    <Key>
+      <PropertyRef Name="ProdutoId" />
+    </Key>
+    <Property Name="ProdutoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ProdutoCategoriaId" Type="Int32" />
+    <Property Name="DataCadastro" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ProdutoCategoria" Relationship="webserviceModel.FK_Produto_ProdutoCategoria" FromRole="Produto" ToRole="ProdutoCategoria" />
+  </EntityType>
+  <EntityType Name="ProdutoCategoria">
+    <Key>
+      <PropertyRef Name="ProdutoCategoriaId" />
+    </Key>
+    <Property Name="ProdutoCategoriaId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Produto" Relationship="webserviceModel.FK_Produto_ProdutoCategoria" FromRole="ProdutoCategoria" ToRole="Produto" />
+  </EntityType>
+  <Association Name="FK_Produto_ProdutoCategoria">
+    <End Role="ProdutoCategoria" Type="webserviceModel.ProdutoCategoria" Multiplicity="0..1" />
+    <End Role="Produto" Type="webserviceModel.Produto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProdutoCategoria">
+        <PropertyRef Name="ProdutoCategoriaId" />
+      </Principal>
+      <Dependent Role="Produto">
+        <PropertyRef Name="ProdutoCategoriaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="uspConsultarProduto_Result">
+    <Property Type="Int32" Name="ProdutoId" Nullable="false" />
+    <Property Type="String" Name="DescProduto" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DataCadastro" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ProdutoCategoriaId" Nullable="true" />
+    <Property Type="String" Name="DescProdutoCategoria" Nullable="true" MaxLength="50" />
+  </ComplexType>
+</Schema>

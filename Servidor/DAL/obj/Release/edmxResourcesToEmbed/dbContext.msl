@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="webserviceModelStoreContainer" CdmEntityContainer="webserviceEntities">
+    <EntitySetMapping Name="Produto">
+      <EntityTypeMapping TypeName="webserviceModel.Produto">
+        <MappingFragment StoreEntitySet="Produto">
+          <ScalarProperty Name="ProdutoId" ColumnName="ProdutoId" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="ProdutoCategoriaId" ColumnName="ProdutoCategoriaId" />
+          <ScalarProperty Name="DataCadastro" ColumnName="DataCadastro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProdutoCategoria">
+      <EntityTypeMapping TypeName="webserviceModel.ProdutoCategoria">
+        <MappingFragment StoreEntitySet="ProdutoCategoria">
+          <ScalarProperty Name="ProdutoCategoriaId" ColumnName="ProdutoCategoriaId" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="uspConsultarProduto" FunctionName="webserviceModel.Store.uspConsultarProduto">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="webserviceModel.uspConsultarProduto_Result">
+          <ScalarProperty Name="ProdutoId" ColumnName="ProdutoId" />
+          <ScalarProperty Name="DescProduto" ColumnName="DescProduto" />
+          <ScalarProperty Name="DataCadastro" ColumnName="DataCadastro" />
+          <ScalarProperty Name="ProdutoCategoriaId" ColumnName="ProdutoCategoriaId" />
+          <ScalarProperty Name="DescProdutoCategoria" ColumnName="DescProdutoCategoria" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

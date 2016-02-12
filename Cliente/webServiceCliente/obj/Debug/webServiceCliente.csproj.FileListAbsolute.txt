@@ -1,0 +1,18 @@
+D:\Projetos\webServiceCliente\webServiceCliente\bin\Debug\webServiceCliente.exe.config
+D:\Projetos\webServiceCliente\webServiceCliente\bin\Debug\webServiceCliente.exe
+D:\Projetos\webServiceCliente\webServiceCliente\bin\Debug\webServiceCliente.pdb
+D:\Projetos\webServiceCliente\webServiceCliente\obj\Debug\webServiceCliente.csprojResolveAssemblyReference.cache
+D:\Projetos\webServiceCliente\webServiceCliente\obj\Debug\webServiceCliente.Form1.resources
+D:\Projetos\webServiceCliente\webServiceCliente\obj\Debug\webServiceCliente.Properties.Resources.resources
+D:\Projetos\webServiceCliente\webServiceCliente\obj\Debug\webServiceCliente.csproj.GenerateResource.Cache
+D:\Projetos\webServiceCliente\webServiceCliente\obj\Debug\webServiceCliente.exe
+D:\Projetos\webServiceCliente\webServiceCliente\obj\Debug\webServiceCliente.pdb
+C:\Users\Workstation\Desktop\JSON Cliente Final\webServiceCliente\webServiceCliente\webServiceCliente\bin\Debug\webServiceCliente.exe.config
+C:\Users\Workstation\Desktop\JSON Cliente Final\webServiceCliente\webServiceCliente\webServiceCliente\bin\Debug\webServiceCliente.exe
+C:\Users\Workstation\Desktop\JSON Cliente Final\webServiceCliente\webServiceCliente\webServiceCliente\bin\Debug\webServiceCliente.pdb
+C:\Users\Workstation\Desktop\JSON Cliente Final\webServiceCliente\webServiceCliente\webServiceCliente\obj\Debug\webServiceCliente.csprojResolveAssemblyReference.cache
+C:\Users\Workstation\Desktop\JSON Cliente Final\webServiceCliente\webServiceCliente\webServiceCliente\obj\Debug\webServiceCliente.Form1.resources
+C:\Users\Workstation\Desktop\JSON Cliente Final\webServiceCliente\webServiceCliente\webServiceCliente\obj\Debug\webServiceCliente.Properties.Resources.resources
+C:\Users\Workstation\Desktop\JSON Cliente Final\webServiceCliente\webServiceCliente\webServiceCliente\obj\Debug\webServiceCliente.csproj.GenerateResource.Cache
+C:\Users\Workstation\Desktop\JSON Cliente Final\webServiceCliente\webServiceCliente\webServiceCliente\obj\Debug\webServiceCliente.exe
+C:\Users\Workstation\Desktop\JSON Cliente Final\webServiceCliente\webServiceCliente\webServiceCliente\obj\Debug\webServiceCliente.pdb

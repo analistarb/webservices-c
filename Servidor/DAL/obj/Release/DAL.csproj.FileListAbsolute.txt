@@ -1,0 +1,8 @@
+C:\Users\Workstation\Desktop\C#\Application\DAL\bin\Release\DAL.dll.config
+C:\Users\Workstation\Desktop\C#\Application\DAL\bin\Release\DAL.dll
+C:\Users\Workstation\Desktop\C#\Application\DAL\bin\Release\DAL.pdb
+C:\Users\Workstation\Desktop\C#\Application\DAL\bin\Release\EntityFramework.dll
+C:\Users\Workstation\Desktop\C#\Application\DAL\bin\Release\EntityFramework.xml
+C:\Users\Workstation\Desktop\C#\Application\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Workstation\Desktop\C#\Application\DAL\obj\Release\DAL.dll
+C:\Users\Workstation\Desktop\C#\Application\DAL\obj\Release\DAL.pdb

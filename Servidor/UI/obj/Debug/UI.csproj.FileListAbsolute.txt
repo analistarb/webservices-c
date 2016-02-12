@@ -1,0 +1,4 @@
+C:\Users\Workstation\Desktop\C#\Application\UI\bin\Debug\UI.dll
+C:\Users\Workstation\Desktop\C#\Application\UI\bin\Debug\UI.pdb
+C:\Users\Workstation\Desktop\C#\Application\UI\obj\Debug\UI.dll
+C:\Users\Workstation\Desktop\C#\Application\UI\obj\Debug\UI.pdb

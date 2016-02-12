@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="webserviceProduto" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="webserviceProduto" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="webserviceProduto">
+      <s:element name="ConsultarProduto">
+        <s:complexType />
+      </s:element>
+      <s:element name="ConsultarProdutoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarProdutoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultarProdutoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarProduto" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarProdutoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsProdutoSoap">
+    <wsdl:operation name="ConsultarProduto">
+      <wsdl:input message="tns:ConsultarProdutoSoapIn" />
+      <wsdl:output message="tns:ConsultarProdutoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsProdutoSoap" type="tns:wsProdutoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarProduto">
+      <soap:operation soapAction="webserviceProduto/ConsultarProduto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsProdutoSoap12" type="tns:wsProdutoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarProduto">
+      <soap12:operation soapAction="webserviceProduto/ConsultarProduto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsProduto">
+    <wsdl:port name="wsProdutoSoap" binding="tns:wsProdutoSoap">
+      <soap:address location="http://localhost/wsProduto/wsProduto.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsProdutoSoap12" binding="tns:wsProdutoSoap12">
+      <soap12:address location="http://localhost/wsProduto/wsProduto.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

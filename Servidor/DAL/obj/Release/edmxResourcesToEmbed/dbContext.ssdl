@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="webserviceModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="webserviceModelStoreContainer">
+    <EntitySet Name="Produto" EntityType="webserviceModel.Store.Produto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProdutoCategoria" EntityType="webserviceModel.Store.ProdutoCategoria" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Produto_ProdutoCategoria" Association="webserviceModel.Store.FK_Produto_ProdutoCategoria">
+      <End Role="ProdutoCategoria" EntitySet="ProdutoCategoria" />
+      <End Role="Produto" EntitySet="Produto" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Produto">
+    <Key>
+      <PropertyRef Name="ProdutoId" />
+    </Key>
+    <Property Name="ProdutoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="varchar" MaxLength="50" />
+    <Property Name="ProdutoCategoriaId" Type="int" />
+    <Property Name="DataCadastro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ProdutoCategoria">
+    <Key>
+      <PropertyRef Name="ProdutoCategoriaId" />
+    </Key>
+    <Property Name="ProdutoCategoriaId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Produto_ProdutoCategoria">
+    <End Role="ProdutoCategoria" Type="webserviceModel.Store.ProdutoCategoria" Multiplicity="0..1" />
+    <End Role="Produto" Type="webserviceModel.Store.Produto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProdutoCategoria">
+        <PropertyRef Name="ProdutoCategoriaId" />
+      </Principal>
+      <Dependent Role="Produto">
+        <PropertyRef Name="ProdutoCategoriaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="uspConsultarProduto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="INintProdutoID" Type="int" Mode="In" />
+    <Parameter Name="INvchDescricao" Type="varchar" Mode="In" />
+    <Parameter Name="INintProdutoCategoriaID" Type="int" Mode="In" />
+  </Function>
+</Schema>
